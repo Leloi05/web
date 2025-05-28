@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inner Div 50% Width</title>
+  <style>
+    #outer-div {
+      width: 600px;
+      text-align: center;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+    }
+
+    #inner-div {
+      width: 50%; /* 50% của 600px = 300px */
+      text-align: center;
+      margin: 0 auto;
+      line-height: 50px;
+      background-color: #d0e8ff;
+      border: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="outer-div">
+    I am outer-div → 600px
+    <div id="inner-div">
+      I am inner-div with 50% width (300px)
+    </div>
+  </div>
+
+</body>
+</html>
