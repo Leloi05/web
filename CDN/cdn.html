@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In Modal Form</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body style="background-color: #f8f9fa;">
+
+  <!-- Centered Sign-In Button -->
+  <div class="d-flex justify-content-center align-items-center vh-100">
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">
+      Sign In
+    </button>
+  </div>
+<!-- Modal with Registration Form -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header bg-dark text-white">
+          <h5 class="modal-title" id="registerModalLabel">User Registration</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body bg-light">
+          <form>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="First name" />
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Last name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Email address" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-
+label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Input password" />
+            </div>
+            <div class="mb-3">
+              <label for="confirm" class="form-label">Confirmation</label>
+              <input type="password" class="form-control" id="confirm" placeholder="Input confirm" />
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-info text-white">Register</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
