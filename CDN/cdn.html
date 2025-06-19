@@ -11,12 +11,51 @@
 <body style="background-color: #f8f9fa;">
 
   <!-- Centered Sign-In Button -->
-  <div class="d-flex justify-content-center align-items-center vh-100">
-    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">
+  <div class="d-flex justify-content-center align-items-center vh-50">
+    <button class="btn btn-primary btn-lg my-4" data-bs-toggle="modal" data-bs-target="#registerModal">
       Sign In
     </button>
   </div>
-<!-- Modal with Registration Form -->
+
+  <!-- House Listing -->
+  <div class="container mb-5">
+    <h2 class="text-center mb-4">Available Houses</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="C:\Users\LeVietLoi\OneDrive\Tài liệu\Arduino\OneDrive\Hình ảnh\Screenshots\Screenshot 2025-06-18 084804.png" class="card-img-top" alt="House 1">
+          <div class="card-body">
+            <h5 class="card-title">Cozy Cottage</h5>
+            <p class="card-text">Price: $150,000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="C:\Users\LeVietLoi\OneDrive\Tài liệu\Arduino\OneDrive\Hình ảnh\Screenshots\Screenshot 2025-06-18 084751.png" class="card-img-top" alt="House 2">
+          <div class="card-body">
+            <h5 class="card-title">Modern Villa</h5>
+            <p class="card-text">Price: $320,000</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="C:\Users\LeVietLoi\OneDrive\Tài liệu\Arduino\OneDrive\Hình ảnh\Screenshots\Screenshot 2025-06-18 084730.png" class="card-img-top" alt="House 3">
+          <div class="card-body">
+            <h5 class="card-title">Urban Apartment</h5>
+            <p class="card-text">Price: $200,000</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal with Registration Form -->
   <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -41,8 +80,15 @@
               <input type="email" class="form-control" id="email" placeholder="Email address" />
             </div>
             <div class="mb-3">
-              <label for="password" class="form-
-label">Password</label>
+              <label for="product" class="form-label">Product</label>
+              <input type="text" class="form-control" id="product" placeholder="Product name" />
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price ($)</label>
+              <input type="number" class="form-control" id="price" placeholder="Enter price" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
               <input type="password" class="form-control" id="password" placeholder="Input password" />
             </div>
             <div class="mb-3">
