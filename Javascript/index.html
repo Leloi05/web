@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tính tổng số chẵn từ 0 đến 10</title>
+    <script>
+        var sumOfEvens = 0;
+        var counter = 0;
+        while (counter <= 10) {
+            if (counter % 2 === 0) {
+                sumOfEvens += counter; 
+            }
+            counter++; 
+        }
+        window.onload = function () {
+            document.getElementById("result").innerText =
+                "Tổng các số chẵn từ 0 đến 10 là: " + sumOfEvens;
+        };
+    </script>
+</head>
+<body>
+    <h1>Tính tổng số chẵn với các vòng là</h1>
+    <p id="result">Đang tính...</p>
+</body>
+</html>
