@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h1>Welcome!</h1>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+    <p><strong>Last login:</strong> <span id="lastLogin"></span></p>
+    <button onclick="logout()">Logout</button>
+  </div>
+  <script>
+    const currentUser = localStorage.getItem("currentUser");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u => u.email === currentUser);
+
+    if (user) {
+      document.getElementById("email").textContent = user.email;
+      document.getElementById("phone").textContent = user.phone;
+      const history = user.loginHistory || [];
+      document.getElementById("lastLogin").textContent = history[history.length - 1] || "No record";
+    } else {
+      alert("No user found.");
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="welcome">
+    <div class="welcome__container">
+      <h1>Welcome!</h1>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
+      <p><strong>Last Login:</strong> <span id="user-login-time"></span></p>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    const currentUserEmail = localStorage.getItem("currentUser");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find(u => u.email === currentUserEmail);
+
+    if (user) {
+      document.getElementById("user-email").textContent = user.email;
+      const history = user.loginHistory || [];
+      const lastLogin = history.length > 0 ? history[history.length - 1] : "No history";
+      document.getElementById("user-login-time").textContent = lastLogin;
+    } else {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("currentUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

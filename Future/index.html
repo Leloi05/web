@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tính điểm trung bình</title>
+</head>
+<body>
+  <h2>Kết quả tính điểm</h2>
+  <div id="result"></div>
+  <script>
+    var subjects = ["Toán", "Lý", "Hóa"];
+    var scores = [];
+    var total = 0;
+
+    for (var i = 0; i < subjects.length; i++) {
+      var input = prompt("Nhập điểm môn " + subjects[i] + " (0 - 10):", 0);
+      input = parseFloat(input);
+      if (input >= 0 && input <= 10) {
+        scores[i] = input;
+        total += input;
+      } else {
+        alert("Điểm không hợp lệ! Vui lòng nhập từ 0 đến 10.");
+        i--;
+      }
+    }
+    var average = total / scores.length;
+    average = parseFloat(average.toFixed(2)); 
+
+    var result = "<ul>";
+    for (var i = 0; i < subjects.length; i++) {
+      result += "<li>" + subjects[i] + ": " + scores[i] + "</li>";
+    }
+    result += "</ul>";
+    result += "<p><strong>Tổng điểm: " + total + "</strong></p>";
+    result += "<p><strong>Điểm trung bình: " + average + "</strong></p>";
+
+    document.getElementById("result").innerHTML = result;
+  </script>
+</body>
+</html>
