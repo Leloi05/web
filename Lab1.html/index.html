@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order iPhone 9</title>
+</head>
+<body>
+  <label id="pro" data-price="1950">iPhone 9</label>
+  <input id="qty" type="number" />
+  <button onclick="display()">OK</button>
+  <hr />
+  <h3>Name: <span id="name">?</span></h3>
+  <h3>Amount: <span id="amount">?</span></h3>
+
+  <script>
+    function display() {
+      var pro = document.getElementById("pro");
+      var qty = document.getElementById("qty");
+
+      var name = pro.innerText;
+      var price = pro.getAttribute("data-price");
+      var quantity = qty.value;
+      var amount = price * quantity;
+
+      document.getElementById("name").innerText = name;
+      document.getElementById("amount").innerText = amount;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    td button {
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <table align="center">
+    <tr>
+      <td><button onclick="mark(0)"></button></td>
+      <td><button onclick="mark(1)"></button></td>
+      <td><button onclick="mark(2)"></button></td>
+    </tr>
+    <tr>
+      <td><button onclick="mark(3)"></button></td>
+      <td><button onclick="mark(4)"></button></td>
+      <td><button onclick="mark(5)"></button></td>
+    </tr>
+    <tr>
+      <td><button onclick="mark(6)"></button></td>
+      <td><button onclick="mark(7)"></button></td>
+      <td><button onclick="mark(8)"></button></td>
+    </tr>
+  </table>
+
+  <script>
+    var flag = true;
+    var count = 0;
+
+    function mark(index) {
+      var button = document.getElementsByTagName("button")[index];
+      button.innerText = flag ? "X" : "O";
+      button.style.backgroundColor = flag ? "aqua" : "yellow";
+      button.setAttribute("disabled", "true");
+
+      flag = !flag;
+      count++;
+
+      if (count === 8) {
+        alert("Game over!");
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
