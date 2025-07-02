@@ -9,17 +9,17 @@
     <tr>
       <td>iPhone9</td>
       <td>$2700</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
     <tr>
       <td>iPhone X</td>
       <td>$3200</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
     <tr>
       <td>iPhone 15</td>
       <td>$3500</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
   </table>
 
@@ -31,16 +31,16 @@
   </div>
 
   <script>
-    function them(button) {
+    function Insert(button) {
       var row = button.parentElement.parentElement.cloneNode(true);
-      var btnXoa = row.getElementsByTagName("button")[0];
-      btnXoa.innerText = "Xóa";
-      btnXoa.setAttribute("onclick", "xoa(this)");
+      var btnDelete = row.getElementsByTagName("button")[0];
+      btnDelete.innerText = "Delete";
+      btnDelete.setAttribute("onclick", "Delete(this)");
       document.getElementById("cart").appendChild(row);
       tinhTong();
     }
 
-    function xoa(button) {
+    function Delete(button) {
       var row = button.parentElement.parentElement;
       document.getElementById("cart").removeChild(row);
       tinhTong();
@@ -57,7 +57,6 @@
       }
       document.getElementById("tong").innerText = tong;
 
-      // Ẩn/hiện nội dung
       if (tong === 0) {
         document.getElementById("empty").style.display = "";
         document.getElementById("not-empty").style.display = "none";
@@ -66,7 +65,6 @@
         document.getElementById("not-empty").style.display = "";
       }
 
-      // Đổi màu nếu tổng > 6000
       var spanTong = document.getElementById("tong");
       spanTong.style.backgroundColor = tong > 6000 ? "yellow" : "";
     }

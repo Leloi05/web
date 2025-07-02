@@ -9,17 +9,17 @@
     <tr>
       <td>iPhone9</td>
       <td>$2700</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
     <tr>
       <td>iPhone X</td>
       <td>$3200</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
     <tr>
       <td>iPhone 15</td>
       <td>$3500</td>
-      <td><button onclick="them(this)">Thêm</button></td>
+      <td><button onclick="Insert(this)">Insert</button></td>
     </tr>
   </table>
 
@@ -29,16 +29,16 @@
   <h3>Total: $<span id="tong">0</span></h3>
 
   <script>
-    function them(button) {
+    function Insert(button) {
       var row = button.parentElement.parentElement.cloneNode(true);
-      var btnXoa = row.getElementsByTagName("button")[0];
-      btnXoa.innerText = "Xóa";
-      btnXoa.setAttribute("onclick", "xoa(this)");
+      var btnDelete = row.getElementsByTagName("button")[0];
+      btnDelete.innerText = "Delete";
+      btnDelete.setAttribute("onclick", "Delete(this)");
       document.getElementById("cart").appendChild(row);
       tinhTong();
     }
 
-    function xoa(button) {
+    function Delete(button) {
       var row = button.parentElement.parentElement;
       document.getElementById("cart").removeChild(row);
       tinhTong();
@@ -50,7 +50,7 @@
       var tong = 0;
       for (var i = 0; i < rows.length; i++) {
         var cells = rows[i].getElementsByTagName("td");
-        var price = cells[1].innerText.substr(1); // bỏ ký tự $
+        var price = cells[1].innerText.substr(1);
         tong += 1 * price;
       }
       document.getElementById("tong").innerText = tong;
