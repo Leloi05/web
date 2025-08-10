@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Sales Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Car Sales Hub</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html">My Cart</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Banner -->
+        <div class="banner">
+            <h2>Discover Your Dream Car Today!</h2>
+            <button class="explore-btn">Explore Now</button>
+        </div>
+
+        <!-- Car Grid -->
+        <section class="car-section">
+            <h3>Featured Cars</h3>
+            <div class="car-grid" id="carGrid">
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Toyota Camry">
+                    <h4>Toyota Camry</h4>
+                    <p>Price: $30,000</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Toyota Camry', 30000)">Add to Cart</button>
+                </div>
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Honda Civic">
+                    <h4>Honda Civic</h4>
+                    <p>Price: $25,000</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Honda Civic', 25000)">Add to Cart</button>
+                </div>
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/200x150" alt="Ford Mustang">
+                    <h4>Ford Mustang</h4>
+                    <p>Price: $40,000</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ford Mustang', 40000)">Add to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact: sales@carsaleshub.com | Follow us: <a href="#">Facebook</a> | © 2025 Car Sales Hub</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Simple cart functionality
+        let cart = [];
+        function addToCart(carName, price) {
+            cart.push({ name: carName, price: price, quantity: 1 });
+            alert(`${carName} added to cart!`);
+            console.log("Cart:", cart); // For debugging
+        }
+
+        // Button hover effect
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('mouseover', () => button.style.backgroundColor = '#2563eb');
+            button.addEventListener('mouseout', () => button.style.backgroundColor = '#3b82f6');
+        });
+    </script>
+</body>
+</html>
